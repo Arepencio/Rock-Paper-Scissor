@@ -1,40 +1,47 @@
+function getPlayerChoice() {
+    let getPlayerChoice = prompt("Round ${round} Rock, Paper or Scissor?");
+    let playerChoice = getPlayerChoice.toLowerCase();
+    let firstLetter = getPlayerChoice.charAt(0);
+    let realPlayerChoice = firstLetter.toUpperCase() + playerChoice.slice(1);
+    return realPlayerChoice;
+};
+
 function getComputerChoice() {
-    let choices = ["Piedra",
-        "Papel",
-        "Tijera"
+    let choices = ["Rock",
+        "Paper",
+        "Scissor"
     ];
     let randomChoice = Math.floor(Math.random() * choices.length);
     return choices[randomChoice];
-}
+};
 
-function realGame(computerChoices) {
-    let getPlayerChoices = prompt("Rock, Paper or Scissor?");
-    let playerChoice = getPlayerChoices.toLowerCase();
-    let firstLetter = getPlayerChoices.charAt(0);
-    let realPlayerChoice = firstLetter.toUpperCase() + playerChoice.slice(1);
-    switch (true) {
-        case realPlayerChoice === "Rock" && computerChoices === "Paper":
-            console.log("You Lose! Paper Beats Rock");
-            break;
-        case realPlayerChoice === "Rock" && computerChoices === "Scissor":
-            console.log("You Win! Rock beats Scissor");
-            break;
-        case realPlayerChoice === "Paper" && computerChoices === "Scissor":
-            console.log("You Lose! Scicssor beats Paper");
-            break;
-        case realPlayerChoice === "Paper" && computerChoices === "Rock":
-            console.log("You Win! Paper beats Rock");
-            break;
-        case realPlayerChoice === "Scissor" && computerChoices === "Rock":
-            console.log("You Lose! Rock beats Scissor");
-            break;
-        case realPlayerChoice === "Scissor" && computerChoices === "Paper":
-            console.log("You Win! Scissor beats Paper");
-            break;
-        case realPlayerChoice === computerChoices:
-            console.log("It's a Tie! No one wins")
-            break;
+function playRound(realPlayerChoice, computerChoice) {
+    if (realPlayerChoice === "Rock" && computerChoice === "Paper") {
+        return "You Lose! Paper Beats Rock";
+    } else if (realPlayerChoice === "Rock" && computerChoice === "Scissor") {
+        return "You Win! Rock beats Scissor";
+    } else if (realPlayerChoice === "Paper" && computerChoice === "Scissor") {
+        return "You Lose! Scicssor beats Paper";
+    } else if (realPlayerChoice === "Paper" && computerChoice === "Rock") {
+        return "You Win! Paper beats Rock";
+    } else if (realPlayerChoice === "Scissor" && computerChoice === "Rock") {
+        return "You Lose! Rock beats Scissor";
+    } else if (realPlayerChoice === "Scissor" && computerChoice === "Paper") {
+        return "You Win! Scissor beats Paper";
+    } else if (realPlayerChoice === computerChoice) {
+        return "It's a Tie! No one wins";
+    } else {
+        return "Something went wrong";
+    };
+};
+
+let rounds = 0;
+
+function game() {
+    for (let i = 0; i <= 4; i++) {
+        round++;
+        console.log(playRound(getPlayerChoice(), getComputerChoice()));
     }
-}
+};
 
-realGame(getComputerChoice())
+game();
