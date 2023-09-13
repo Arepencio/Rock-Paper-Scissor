@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.header {
+    background-color: #71eb34;
+    display: flex;
+    flex: 1 1 0;
+}
+
+.howTo {
+    background-color: #71eb34
+}
+
+.playground {}
+
+.madeBy {}
