@@ -2,18 +2,67 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    font-family: monospace;
+}
+
+img {
+    border-radius: 50%;
+}
+
+button {
+    border-radius: 50%;
+}
+
+.buttons {
+    height: 200px;
+    width: 200px;
+}
+
+.playerBoard,
+.botBoard {
+    display: flex;
+    flex: 1 1 0;
+    justify-content: space-around;
+}
+
+.playerButtons,
+.botButtons {
+    display: flex;
+    margin: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .header {
     background-color: #71eb34;
+    border: 5px solid white;
+}
+
+.playground {
     display: flex;
-    flex: 1 1 0;
 }
 
-.howTo {
-    background-color: #71eb34
+.board {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
 }
 
-.playground {}
+.howTo,
+.madeBy,
+.reset {
+    background-color: #67e727;
+    border-right: 5px solid white;
+    border-left: 5px solid white;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.rules,
+.resetButton {
+    margin-top: 50%;
+    height: 170px;
+    width: 170px;
+}
 
 .madeBy {}
