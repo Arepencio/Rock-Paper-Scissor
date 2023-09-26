@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="rps.js"></script>
+    <script src="rps.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <title>Rock, Paper, Scissor</title>
 </head>
@@ -22,17 +22,25 @@
         <div class="board">
             <h2>Machine</h2>
             <div class="botBoard">
-                <button class="botButtons"><img src=" img/rock.png " class="buttons "></button>
-                <button class="botButtons"><img src="img/paper.png" class="buttons"></button>
-                <button class="botButtons"><img src=" img/scissor.png " class="buttons "></button>
+                <button id="botRock"><img src=" img/rock.png" class="buttons "></button>
+                <button id="botPaper"><img src="img/paper.png" class="buttons"></button>
+                <button id="botScissor"><img src=" img/scissor.png" class="buttons "></button>
             </div>
-            <div class="score ">
-                <h2>0 | 0</h2>
+            <div class="score">
+                <div>
+                    <h2 class="botScore">0</h2>
+                </div>
+                <div>
+                    <h2>---</h2>
+                </div>
+                <div>
+                    <h2 class="playerScore">0</h2>
+                </div>
             </div>
             <div class="playerBoard ">
-                <button class="playerButtons"><img src="img/rock.png " class="buttons "></button>
-                <button class="playerButtons"><img src="img/paper.png " class="buttons "></button>
-                <button class="playerButtons"><img src="img/scissor.png " class="buttons "></button>
+                <button id="Rock"><img src="img/rock.png" class="buttons "></button>
+                <button id="Paper"><img src="img/paper.png" class="buttons "></button>
+                <button id="Scissor"><img src="img/scissor.png" class="buttons "></button>
             </div>
             <h2>You</h2>
         </div>

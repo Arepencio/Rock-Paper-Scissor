@@ -25,14 +25,6 @@ button {
     justify-content: space-around;
 }
 
-.playerButtons,
-.botButtons {
-    display: flex;
-    margin: 10px;
-    margin-left: 40px;
-    margin-right: 40px;
-}
-
 .header {
     background-color: #71eb34;
     border: 5px solid white;
@@ -40,6 +32,11 @@ button {
 
 .playground {
     display: flex;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
 }
 
 .board {
@@ -64,5 +61,3 @@ button {
     height: 170px;
     width: 170px;
 }
-
-.madeBy {}
