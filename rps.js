@@ -7,46 +7,55 @@ function getComputerChoice() {
     return options[randomChoice];
 };
 
-function getPlayerChoice() {
-    const playerRock = document.querySelector('#playerRock');
-    playerRock.addEventListener('click', function(e) {
-        return 'Rock'
-    });
-    return playerRock
-}
+const board = document.querySelector('.board');
+const playerScore = document.querySelector('.playerScore');
+const botScore = document.querySelector('.botScore');
+const playerRock = document.querySelector('#rock');
+const playerPaper = document.querySelector('#paper');
+const playerScissor = document.querySelector('#scissor');
 
-let choices = [getComputerChoice(), getPlayerChoice()]
-
-const botRock = document.querySelector('#botRock');
-const botPaper = document.querySelector('#botPaper');
-const botScissor = document.querySelector('#botScissor');
+let choices = [];
+let playerCount = 0;
+let botCount = 0;
+playerScore.textContent = playerCount;
+botScore.textContent = botCount;
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === "Rock" && computerChoice === "Paper") {
-        return "You Lose! Paper Beats Rock";
+        botCount++
     } else if (playerChoice === "Rock" && computerChoice === "Scissor") {
-        return "You Win! Rock beats Scissor";
+        playerCount++
     } else if (playerChoice === "Paper" && computerChoice === "Scissor") {
-        return "You Lose! Scicssor beats Paper";
+        botCount++
     } else if (playerChoice === "Paper" && computerChoice === "Rock") {
-        return "You Win! Paper beats Rock";
+        playerCount++
     } else if (playerChoice === "Scissor" && computerChoice === "Rock") {
-        return "You Lose! Rock beats Scissor";
+        botCount++
     } else if (playerChoice === "Scissor" && computerChoice === "Paper") {
-        return "You Win! Scissor beats Paper";
-    } else if (playerChoice === computerChoice) {
-        return "It's a Tie! No one wins";
+        playerCount++
     } else {
-        return "Something went wrong";
+        console.log("Something went wrong");
     };
 };
 
-console.log(getPlayerChoice())
-    /*let rounds = 0;
+playerRock.addEventListener('click', () => {
+    choices = ["Rock", getComputerChoice()];
+    playRound(choices[0], choices[1])
+});
+playerPaper.addEventListener('click', () => {
+    choices = ["Paper", getComputerChoice()];
+    playRound(choices[0], choices[1])
+});
+playerScissor.addEventListener('click', () => {
+    choices = ["Scissor", getComputerChoice()];
+    playRound(choices[0], choices[1])
+});
 
-    function game() {
-        for (let i = 0; i <= 4; i++) {
-            round++;
-            console.log(playRound(getPlayerChoice(), getComputerChoice()));
-        }
-    };*/
+/*let rounds = 0;
+
+function game() {
+    for (let i = 0; i <= 4; i++) {
+        round++;
+        console.log(playRound(getPlayerChoice(), getComputerChoice()));
+    }
+};*/
